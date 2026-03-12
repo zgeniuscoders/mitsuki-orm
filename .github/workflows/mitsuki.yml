@@ -29,5 +29,10 @@ jobs:
           mkdir -p tests/temp_cache
           chmod -R 777 tests/temp_cache
 
+      - name: Create Doctrine Cache Proxie Directory
+        run: |
+          mkdir -p var/cache/orm/proxies
+          chmod -R 777 var/cache/orm/proxies
+
       - name: Run Pest Tests
         run: ./vendor/bin/pest
