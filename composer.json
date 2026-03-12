@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Tsuki\\": "src/",
+            "Mitsuki\\ORM\\": "src/",
             "Tests\\": "tests/"
         }
     },
@@ -18,7 +18,8 @@
     "require": {
         "doctrine/orm": "^3",
         "doctrine/dbal": "^4",
-        "symfony/cache": "^7"
+        "symfony/cache": "^7",
+        "symfony/var-exporter": "^7"
     },
     "require-dev": {
         "pestphp/pest": "^4.4"
