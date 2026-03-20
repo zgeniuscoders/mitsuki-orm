@@ -7,6 +7,7 @@ use Doctrine\ORM\Tools\SchemaTool;
 use Mitsuki\ORM\MitsukiORM;
 use Tests\Fixtures\Article;
 use Tests\Fixtures\Category;
+use Tests\Fixtures\Tag;
 
 /**
  * Setup: Initializes a clean physical SQLite database for each test.
@@ -15,24 +16,35 @@ use Tests\Fixtures\Category;
  */
 beforeEach(function () {
     $this->dbFile = __DIR__ . '/../db_test.sqlite';
-    clearstatcache();
+    
+    if (file_exists($this->dbFile)) {
+        unlink($this->dbFile);
+    }
 
     $this->em = MitsukiORM::create([
         'driver' => 'pdo_sqlite',
         'path'   => $this->dbFile,
     ], __DIR__ . '/../../var/cache', true);
 
+    $metadatas = [
+        $this->em->getClassMetadata(Category::class),
+        $this->em->getClassMetadata(Article::class),
+        $this->em->getClassMetadata(Tag::class),
+    ];
+
     $tool = new SchemaTool($this->em);
-    $tool->createSchema($this->em->getMetadataFactory()->getAllMetadata());
+  
+    $tool->createSchema($metadatas);
 });
 
-/**
- * Teardown: Safely closes the database connection.
- * * Essential for Windows compatibility to release file locks on the SQLite database,
- * allowing the 'beforeEach' of the next test to delete and recreate the file.
- */
 afterEach(function () {
-    $this->em->getConnection()->close();
+    if (isset($this->em)) {
+        $this->em->getConnection()->close();
+    }
+
+    if (file_exists($this->dbFile)) {
+        unlink($this->dbFile);
+    }
 });
 
 /**
@@ -99,7 +111,7 @@ test('correctly retrieves a ManyToOne relationship (Article -> Category)', funct
     $this->em->persist($category);
 
     $article = new Article();
-    $article->title = 'Introducing Tsuki ORM';
+    $article->title = 'Introducing Mutsiki ORM';
     $article->category = $category;
     $this->em->persist($article);
 
