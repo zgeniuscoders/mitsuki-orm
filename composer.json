@@ -1,7 +1,21 @@
 {
     "name": "mitsuki/mitsuki-orm",
+    "description": "A lightweight wrapper around Doctrine ORM 3 providing reflection-based repository mapping, advanced query helpers, and metadata caching.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "orm",
+        "doctrine",
+        "doctrine-orm",
+        "repository",
+        "query-builder",
+        "pagination",
+        "database",
+        "performance",
+        "reflection",
+        "cache"
+    ],
     "autoload": {
         "psr-4": {
             "Mitsuki\\ORM\\": "src/",
