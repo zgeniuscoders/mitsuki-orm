@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "344eac9408fc5c8fd83e274abfa85e6e",
+    "content-hash": "a84b5b93bc2dd16928feb5e49b76a47f",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -1088,39 +1088,47 @@
         },
         {
             "name": "symfony/console",
-            "version": "v8.0.7",
+            "version": "v7.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a"
+                "reference": "e1e6770440fb9c9b0cf725f81d1361ad1835329d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a",
-                "reference": "15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e1e6770440fb9c9b0cf725f81d1361ad1835329d",
+                "reference": "e1e6770440fb9c9b0cf725f81d1361ad1835329d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4",
-                "symfony/polyfill-mbstring": "^1.0",
+                "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/polyfill-mbstring": "~1.0",
                 "symfony/service-contracts": "^2.5|^3",
-                "symfony/string": "^7.4|^8.0"
+                "symfony/string": "^7.2|^8.0"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<6.4",
+                "symfony/dotenv": "<6.4",
+                "symfony/event-dispatcher": "<6.4",
+                "symfony/lock": "<6.4",
+                "symfony/process": "<6.4"
             },
             "provide": {
                 "psr/log-implementation": "1.0|2.0|3.0"
             },
             "require-dev": {
                 "psr/log": "^1|^2|^3",
-                "symfony/config": "^7.4|^8.0",
-                "symfony/dependency-injection": "^7.4|^8.0",
-                "symfony/event-dispatcher": "^7.4|^8.0",
-                "symfony/http-foundation": "^7.4|^8.0",
-                "symfony/http-kernel": "^7.4|^8.0",
-                "symfony/lock": "^7.4|^8.0",
-                "symfony/messenger": "^7.4|^8.0",
-                "symfony/process": "^7.4|^8.0",
-                "symfony/stopwatch": "^7.4|^8.0",
-                "symfony/var-dumper": "^7.4|^8.0"
+                "symfony/config": "^6.4|^7.0|^8.0",
+                "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+                "symfony/event-dispatcher": "^6.4|^7.0|^8.0",
+                "symfony/http-foundation": "^6.4|^7.0|^8.0",
+                "symfony/http-kernel": "^6.4|^7.0|^8.0",
+                "symfony/lock": "^6.4|^7.0|^8.0",
+                "symfony/messenger": "^6.4|^7.0|^8.0",
+                "symfony/process": "^6.4|^7.0|^8.0",
+                "symfony/stopwatch": "^6.4|^7.0|^8.0",
+                "symfony/var-dumper": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -1154,7 +1162,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v8.0.7"
+                "source": "https://github.com/symfony/console/tree/v7.4.7"
             },
             "funding": [
                 {
@@ -1174,7 +1182,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-06T14:06:22+00:00"
+            "time": "2026-03-06T14:06:20+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2323,6 +2331,103 @@
                 "source": "https://github.com/Jean85/pretty-package-versions/tree/2.1.1"
             },
             "time": "2025-03-19T14:43:43+00:00"
+        },
+        {
+            "name": "mitsuki/commands",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zgeniuscoders/mitsuki-commands.git",
+                "reference": "152e7c83db915af9ec6e92fc9b9548bf071f18a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zgeniuscoders/mitsuki-commands/zipball/152e7c83db915af9ec6e92fc9b9548bf071f18a1",
+                "reference": "152e7c83db915af9ec6e92fc9b9548bf071f18a1",
+                "shasum": ""
+            },
+            "require": {
+                "mitsuki/contracts": "^1.0",
+                "php": ">=8.2",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tests\\": "tests/",
+                    "Mitsuki\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zgeniuscoders",
+                    "email": "zgeniuscoders@gmail.com"
+                }
+            ],
+            "description": "A powerful command-line interface library for the Mitsuki framework.",
+            "keywords": [
+                "cli",
+                "commands",
+                "console",
+                "mitsuki",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/zgeniuscoders/mitsuki-commands/issues",
+                "source": "https://github.com/zgeniuscoders/mitsuki-commands/tree/v1.0.0"
+            },
+            "time": "2026-03-09T15:57:55+00:00"
+        },
+        {
+            "name": "mitsuki/contracts",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zgeniuscoders/mitsuki-contracts.git",
+                "reference": "4fdbf9d8eea64e48a117e56f09f45e46970bb755"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zgeniuscoders/mitsuki-contracts/zipball/4fdbf9d8eea64e48a117e56f09f45e46970bb755",
+                "reference": "4fdbf9d8eea64e48a117e56f09f45e46970bb755",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mitsuki\\Contracts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zgeniusecoders",
+                    "email": "zgeniusecoders@gmail.com"
+                }
+            ],
+            "description": "Core interfaces and abstractions for the Mitsuki framework.",
+            "keywords": [
+                "contracts",
+                "framework",
+                "interfaces",
+                "mitsuki",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/zgeniuscoders/mitsuki-contracts/issues",
+                "source": "https://github.com/zgeniuscoders/mitsuki-contracts/tree/v1.0.2"
+            },
+            "time": "2026-02-20T15:43:34+00:00"
         },
         {
             "name": "mockery/mockery",
